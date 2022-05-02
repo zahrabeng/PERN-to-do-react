@@ -1,7 +1,7 @@
-export default function EditToDo (): JSX.Element {
-    return (
-        <>
-        <div></div>
-        </>
-    )
+export default function EditToDo(): JSX.Element {
+  return (
+    <>
+      <div></div>
+    </>
+  );
 }
