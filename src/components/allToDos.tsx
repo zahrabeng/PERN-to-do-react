@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
  
 export default function AllToDos(): JSX.Element {
+  const[toDos, setToDos] = useState([])
 
   const getToDos = async () => {
     try {
       const response = await fetch("http://localhost:5000/todolist")
       const jsonData = await response.json()
 
-      console.log(jsonData)
+      setToDos(jsonData)
     } catch (err:any) {
       console.error(err.message)
     }
@@ -15,9 +16,9 @@ export default function AllToDos(): JSX.Element {
 
     useEffect(() => {
       getToDos();
-    })
+    }, [])
 
-
+    console.log(toDos)
   return (
     <>
       <div className="all-to-dos-container">
